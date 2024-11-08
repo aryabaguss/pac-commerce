@@ -117,6 +117,55 @@ The system includes basic error handling for:
 - The system maintains an internal dictionary of user memberships
 - Calculations are rounded to 2 decimal places for precision
 
+## Test Cases
+
+The program includes several test cases to demonstrate the different functionalities of the Paccommerce Membership System.
+
+### Test Case 1: Displaying Membership Benefits
+
+```python
+user1 = Membership_user('Cahya')
+user1.show_benefit()
+```
+
+This test case shows how a user can view the details of the available Paccommerce membership benefits, including the discount rates and additional perks for each tier.
+
+### Test Case 2: Displaying Membership Requirements
+
+```python
+user1.show_requirements()
+```
+
+This test case demonstrates how a user can view the monthly expense and income requirements for each Paccommerce membership tier.
+
+### Test Case 3: Predicting Membership Tier
+
+```python
+user2 = Membership_user('Shandy')
+user2.predict_membership(3, 10)
+```
+
+This test case shows how the system uses Euclidean Distance to predict a user's membership tier based on their monthly expense and income. The output displays the calculated distances for each tier and the predicted membership.
+
+### Test Case 4: Calculating Discounted Price
+
+```python
+user1.calculate_price(user1.username, [150000, 200000, 400000])
+```
+
+This test case verifies the functionality of the `calculate_price()` method, which calculates the discounted final price for a user's purchase based on their membership tier.
+
+### Test Case 5: Handling Unknown Users
+
+```python
+user_bambang = Membership_user("Bambang")
+user_bambang.predict_membership(3, 4)
+user_bambang.show_membership(user_bambang.username)
+user_bambang.calculate_price(user_bambang.username, [300_000, 150_000, 1_250_000, 15_000])
+```
+
+This test case demonstrates how the system handles cases where the user is not found in the internal user data dictionary. It shows the system's behavior when predicting a membership tier, displaying the membership, and calculating the price for an unknown user.
+
 ## Contributing
 
 Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
